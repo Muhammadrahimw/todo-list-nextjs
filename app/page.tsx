@@ -69,13 +69,13 @@ const Home = () => {
 						/>
 						<Button
 							onClick={() => {
-								editingRef.current?.value && editText
-									? editingTextStorage({
-											id: editText.id,
-											text: editingRef.current.value,
-											select: false,
-									  })
-									: "";
+								if (editingRef.current?.value && editText) {
+									editingTextStorage({
+										id: editText.id,
+										text: editingRef.current.value,
+										select: editText.select,
+									});
+								}
 								if (editingRef.current) {
 									editingRef.current.value = "";
 								}
