@@ -75,8 +75,6 @@ const Home = () => {
 										text: editingRef.current.value,
 										select: editText.select,
 									});
-								}
-								if (editingRef.current) {
 									editingRef.current.value = "";
 								}
 								setEdit(false);
@@ -97,10 +95,8 @@ const Home = () => {
 						/>
 						<Button
 							onClick={() => {
-								addingRef.current?.value
-									? addingTextStorage(addingRef.current.value)
-									: "";
-								if (addingRef.current) {
+								if (addingRef.current?.value) {
+									addingTextStorage(addingRef.current.value);
 									addingRef.current.value = "";
 								}
 								setState(!state);
