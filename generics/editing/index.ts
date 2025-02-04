@@ -7,6 +7,7 @@ export const editingTextStorage = (props: textType) => {
 			? {
 					id: value.id,
 					text: props.text,
+					select: props.select,
 			  }
 			: value
 	);
